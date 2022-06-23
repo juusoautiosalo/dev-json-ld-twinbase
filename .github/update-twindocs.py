@@ -66,7 +66,7 @@ with open("modified-yamls.txt", "r") as a_file:
     with open(file, 'w') as filew:
         yaml.dump(data, filew, default_flow_style=False, sort_keys=False, allow_unicode=True)
     # copy yaml to json
-    with open('index.json', 'w') as jsonfilew:
+    with open(file[:-10] + 'index.json', 'w') as jsonfilew:
         json.dump(data, jsonfilew, indent=4)
     
     # Test if DT-ID redirects to hosting IRI, give actions error if not
