@@ -35,8 +35,8 @@ jobs:
     - name: Modify twindocs
       run: |
         echo Create modification lists
-        git diff --name-only HEAD~1 HEAD | grep 'index.json' > modified-jsons.txt
-        git diff --name-only HEAD~1 HEAD | grep 'index.yaml' > modified-yamls.txt
+        git diff --name-only HEAD~1 HEAD | grep 'index.json' > modified-jsons.txt || echo "git exit code for jsons: $?"
+        git diff --name-only HEAD~1 HEAD | grep 'index.yaml' > modified-yamls.txt || echo "git exit code for yamls: $?"
         echo Update twindocs
         python3 ${GITHUB_WORKSPACE}/.github/update-twindocs.py
         echo Remove modification lists
