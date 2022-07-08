@@ -34,15 +34,16 @@ jobs:
         pip install -r requirements.txt
     - name: Modify twindocs
       run: |
-        echo Create modification lists
+        # Create modification lists
         git diff --name-only HEAD~1 HEAD | grep 'index.json' > modified-jsons.txt || echo "git exit code for jsons: $?"
         git diff --name-only HEAD~1 HEAD | grep 'index.yaml' > modified-yamls.txt || echo "git exit code for yamls: $?"
-        echo Update twindocs
+        # Update twindocs
         python3 ${GITHUB_WORKSPACE}/.github/update-twindocs.py
-        echo Remove modification lists
+        # Remove modification lists
         rm modified-yamls.txt
         rm modified-jsons.txt
-        echo Git commit
+        # Git operations
+        git add -A
         git commit -m "Automodified twin documents" -a || echo "Warning: git commit returned error code $? (Hopefully nothing to commit)"
     - name: Generate base YAML
       run: |
