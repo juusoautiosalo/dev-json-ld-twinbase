@@ -2,7 +2,7 @@
     "dt-id": "https://dtid.org/example-twin-e8fde635-e14a-41d7-85f0-676cd10cae32",
     "hosting-iri": "https://juusoautiosalo.github.io/dev-json-ld-twinbase/example-twin-e8fde635-e14a-41d7-85f0-676cd10cae32",
     "name": "Example twin modified once again and with json",
-    "description": "This is an example twin to show what a DT document can look like. You can safely remove the folder that contains this document.",
+    "description": "This is an example twin to show what a DT document can look like. You can safely remove the folder that contains this document. Modify in second commit of a push in JSON.",
     "baseurl": "https://juusoautiosalo.github.io/dev-json-ld-twinbase",
     "edit": "https://github.com/juusoautiosalo/dev-json-ld-twinbase/edit/main/docs/example-twin-e8fde635-e14a-41d7-85f0-676cd10cae32/index.yaml"
 }
